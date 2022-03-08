@@ -1,13 +1,13 @@
 import React from 'react'
 import Wheather from './Weather'
 
-const ResCountries = ({ filterCountries, setSearchCountry }) => {
+const Countries = ({ filterCountries, setSearchCountry }) => {
   const length = filterCountries.length
   if (length > 10) return (
     <p>Too many matches, specify another filter</p>
   )
   else if (length === 1) return (
-    <ShowCountry country={filterCountries[0]} />
+    <Country country={filterCountries[0]} />
   )
   else if (length === 0) return (
     <div>
@@ -28,7 +28,7 @@ const ResCountries = ({ filterCountries, setSearchCountry }) => {
   )
 }
 
-const ShowCountry = ({ country }) => (
+const Country = ({ country }) => (
   <div>
     <h2>{country.name.common}</h2>
     <p>Capital {country.capital}</p>
@@ -42,4 +42,4 @@ const ShowCountry = ({ country }) => (
   </div>
 )
 
-export default ResCountries
+export default Countries

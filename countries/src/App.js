@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import ResCountries from './components/ResCountries'
+import Countries from './components/Countries'
 
 const App = () => {
 
@@ -35,7 +35,7 @@ const App = () => {
       <h1>Countries</h1>
       find countries <input value={newSearch} onChange={handleSearchChange}></input>
       <div>
-        <ResCountries filterCountries={filterCountries} setSearchCountry={setSearchCountry} />
+        <Countries filterCountries={filterCountries} setSearchCountry={setSearchCountry} />
       </div>
     </div>
   )
