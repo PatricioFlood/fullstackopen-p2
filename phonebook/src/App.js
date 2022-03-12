@@ -41,6 +41,9 @@ const App = () => {
           setNewNumber('')
           newNotification({ message: `Addedd ${newPerson.name}`, type: 'success', time: 3000 })
         })
+        .catch(error => {
+          newNotification({ message: error.response.data.error, type: 'error', time: 10000 })
+        })
     }
     else
       if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
@@ -52,6 +55,9 @@ const App = () => {
             setNewName('')
             setNewNumber('')
             newNotification({ message: `Updated ${newPerson.name}`, type: 'success', time: 3000 })
+          })
+          .catch(error => {
+            newNotification({ message: error.response.data.error, type: 'error', time: 10000 })
           })
       }
 
